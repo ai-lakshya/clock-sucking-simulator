@@ -1,0 +1,63 @@
+NOTE: This is the original brainstorm, kept for history. It is superseded by docs/game-design-v0.1.0.md,
+which resolves its contradictions and is the source of truth for the game's design.
+
+Clock Sucking Simulator - Game Idea
+
+Brief idea of the game:
+- You work at a shitty company which sucks the life out of you, so you decide to suck the life out of the clock.
+- But you can't get caught by your boss or your co-workers who would snitch on you (to the boss) the first opportunity they get.
+- Your goal is to waste the most amount of time (by not actually doing your job) but also not be fired for doing less 
+  work than your co-workers.
+- You have one 6-day work week to beat your co-workers and your boss and become employee of the week.
+
+Game mechanics:
+- This is a multiplayer game where one person becomes the boss (randomly) and others become employees.
+- Goal of the employees is to maximize their utility by the end of the week.
+- Goal of the boss is to catch any slacking employees, if he is able to fire all bad employees by the end of the week
+  boss wins. There is a work threshold which gets completed by the empployees then also the boss wins.
+- If the days work is not completed the worst employee of the day gets eliminated (fired) and boss gets points.
+
+Player mechanics (employees):
+- Employees can see the cabins of all the co-workers and the position of the boss always.
+- Mode 1: Honest work - employee works till the mode changes.
+- Mode 2: Clock sucking - employee wastes time by not doing work and chilling (or snitching).
+- Mode 3: Snitch - employee can select a co-worker to snitch on them.
+          Employee will go to the cabin of the other employee to collect evidence, 
+          if they find the other employee clock-sucking they have evidence, 
+          otherwise the other employee has the option of collecting evidence against this employee (for roaming around).
+- Time spent in Mode 3 (Snitch) will also be counted as clock-sucking and be rewarded similarly.
+- If an employee has collected evidence against a co-worker (he can report them to the boss when he comes to their cabin and finds them working).
+- If an employee has evidence against another employee but get caught themselves they have the option of getting eliminated or
+  snitching on the employee (this will reset their work done but save them from getting fired). However if the work threshold is incomplete
+  and they are the lowest working employee of the day they still get fired.
+- Employee can switch instantly from Mode-2 or Mode-3 to Mode-1 if they are inside their own cabin.
+
+Player mechanics (boss):
+- Boss roams the corridor and cannot see inside a cabin without entering it.
+- Boss can instantly fire an employee not working (even if he finds them roaming in corridor).
+- If a player has evidence against another they will still be fired first if caugt clock-sucking.
+- At the end of the day boss can choose to fire the lowest working employee if the days work is not completed.
+  However the boss can choose not to eliminate them.
+- Entering a room would not be instant (maybe a 0.25 second delay).
+
+Point system (for employees):
+- A day consists of 8 work hours and 1 hour of lunch break (1 hour translates to 15 seconds of game time).
+- Every hour of honest work gains 1 utility point and completes 1 unit of work.
+- Every hour of clock-sucking gains 5 utility points and completes 0 units of work.
+
+Point system (for boss):
+- Getting the days work done by the employees gains 2 utility points.
+- Catching a clock-sucker gains the boss 5 utility points.
+
+Map design (initial idea):
+- There are 4 cabins in a sqare like grid with 2 gates to every cabin (any player can enter or leave from here any time).
+- There is a middle corridor in the office where boss patrols and tries to catch a clock-sucker.
+- Later there can be custom maps containing more cabins (lets keep the office a regular polygon for now for any size).
+
+Gotchas and other ideas to explore:
+- The timings and point system described above is for example and not the final thing (it will need to be fine tuned for maximum fun).
+- How about adding a delay for switching between modes for employees.
+
+Inspiration for this game idea came from:
+- Among  us
+- office game (ask arya the name)

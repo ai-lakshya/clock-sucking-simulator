@@ -1,0 +1,4 @@
+# directories to ignore
+.claude/
+
+# files to ignore
