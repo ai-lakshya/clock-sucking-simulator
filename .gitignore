@@ -1,4 +1,16 @@
-# directories to ignore
+# directories to ignore.
 .claude/
 
-# files to ignore
+# python (uv) generated files and directories.
+*.swp
+*.spec
+
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+__pycache__/
+build/
+dist/
+
+# vscode generated files and directories.

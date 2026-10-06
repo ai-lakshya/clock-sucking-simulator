@@ -1,0 +1,30 @@
+[project]
+name = "clock-sucking-sim-proto"
+version = "0.1.0"
+description = "Initial prototype for the clock-sucking-simulator game."
+readme = "README.md"
+authors = [
+    { name = "Lakshya Bamne", email = "lakshya.bamne.ai@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pygame-ce>=2.5.8",
+    "pytmx>=3.32",
+]
+
+[project.scripts]
+gameServer = "clock_sucking_sim_proto:main"
+
+[dependency-groups]
+dev = [
+    "pyinstaller>=6.22.3",
+    "pytest>=9.1.1",
+    "ruff>=0.16.10",
+]
+
+[tool.ruff]
+line-length = 100
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"
